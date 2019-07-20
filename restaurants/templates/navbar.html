@@ -5,18 +5,24 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    {%if request.user.is_authenticated %}
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'signout' %}">Signout</a>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'restaurant-create' %}">Create Restaurant</a>
       </li>
+        {%else%}
+      
       <li class="nav-item">
         <a class="nav-link" href="{% url 'signup' %}">Signup</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'signin' %}">Signin</a>
+        {%endif%}
+
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'signout' %}">Signout</a>
+      
       </li>
     </ul>
     

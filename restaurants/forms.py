@@ -17,7 +17,7 @@ class RestaurantForm(forms.ModelForm):
 class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
-        exclude = ['restaurant',]
+        exclude = ['restaurant']
 
 
 class SignupForm(forms.ModelForm):
